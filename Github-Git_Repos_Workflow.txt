@@ -1,0 +1,40 @@
+
+Main Branches: Master, Develop
+	-Master is a default Branch
+	- Develop is unstable code(eg. Draft codes). Master is the latest stable code.
+	-when a  source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number.  
+
+
+Feature/topic branches: The essence of a feature branch is that it exists as long as the feature is in development, but will eventually be merged back into develop (to definitely add the new feature to the upcoming release) or discarded (in case of a disappointing experiment).
+
+Feature branches typically exist in developer repos only, not in origin.
+
+May branch off from:
+develop
+Must merge back into:
+develop
+Branch naming convention:
+anything except master, develop, release-*, or hotfix-*
+
+
+Hotfix branches :, a hotfix branch may be branched off from the corresponding tag on the master branch that marks the production version. Like a quick like a bugfix 
+
+	May branch off from:
+	master
+	Must merge back into:
+	develop and master
+	Branch naming convention:	
+	hotfix-*
+
+Release branches : last minute touch up (i.e formatting ,commenting ),minor bug fixes.
+	May branch off from:
+	develop
+	Must merge back into:
+	develop and master
+	Branch naming convention:
+	release-*
+
+________________________________________________________________________
+Resources:
+https://flaviocopes.com/git/
+https://nvie.com/posts/a-successful-git-branching-model/
