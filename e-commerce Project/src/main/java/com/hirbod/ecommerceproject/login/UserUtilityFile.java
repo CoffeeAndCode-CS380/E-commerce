@@ -54,4 +54,12 @@ public class UserUtilityFile {
         String formattedTime = time.format(formatter); //converting that pattern to String
         return formattedTime; // the method should return a String
     }
+
+    public static boolean validatePassword (String passWord){
+        if (passWord.length() >= 8) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

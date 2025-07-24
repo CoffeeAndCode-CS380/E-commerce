@@ -43,6 +43,10 @@ public class LoginController implements Initializable{
             //store them in variable to use later in the function calls
             String username = enterUsernameTextField.getText();
             String password = enterPasswordField.getText();
+            if(!UserUtilityFile.validatePassword(password)){
+                loginMessageLabel.setText("Password must be at least 8 characters long!");
+                return;
+            }
             //made saveLoginInfo tpe bool to keep these cleaner
             boolean successfulLogin = UserUtilityFile.saveLoginInfo(username, password);
             if(successfulLogin){
