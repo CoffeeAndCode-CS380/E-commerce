@@ -1,0 +1,120 @@
+package ecommerce.com.login;
+
+import javax.imageio.IIOException;
+import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+public class LoginUtils {
+
+    public static boolean saveLoginInfo(String userName, String passWord){
+        String time = getCurrentTime();
+        if(!validatePassword(passWord)){ //TODO: remove this if later
+            return false;
+        }
+        File f = new File("usersInfo.txt");
+        if (f.exists() && !f.isDirectory()){ //check if the file exists
+            if (!doesUserNameExist(userName, f)){ //if the username does not already exist in the file
+                String userID = generateUserID();
+                writeInfoToFile(userName, passWord, userID, time, f); // save it to file
+                return true;
+            } else{ //if the file and the username exist
+                if(doPasswordsMatch(userName, passWord, f)){ //if username exists and passwords match
+                    getExistingUserId(userName, f); // if the username exists, get the existing ID from file.
+                    //System.out.println("welcome back " + userName); //TODO: remove this print later
+                }
+            }
+        } else { //if the file doesn't exist that will be the first user in the file.
+            String userID = generateUserID();
+            writeInfoToFile(userName, passWord, userID, time, f);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean doPasswordsMatch(String userName, String passWord, File f){
+        for (String[] entry : allUserEntries(f)){
+            if (entry[1].trim().equals(passWord.trim())){ // if the username exists, check if the passwords match
+                return true;
+            }
+        }
+        return false; //passwords do not match
+    }
+
+    public static String getExistingUserId(String userName, File f){
+        for (String[] entry : allUserEntries(f)){
+            if (entry[0].trim().equals(userName.trim())){ //trim ignores the spaces
+                return entry[2]; //the username already exists in the file
+            }//checks if the username already exists
+        }
+        return null; //usernames do not match
+    }
+
+    public static List<String[]> allUserEntries(File f){
+        List<String[]> userEntries = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(f));
+            String line;
+            while ((line = reader.readLine()) != null) { //reading the file line by line
+                String[] parts = line.split(",");
+                userEntries.add(parts);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return userEntries;
+    }
+
+    private static boolean doesUserNameExist(String userName, File f){
+        for (String[] entry : allUserEntries(f)){
+            if (entry[0].trim().equals(userName.trim())){ //trim ignores the spaces
+                return true; //the username already exists in the file
+            }//checks if the username already exists
+        }
+        return false;
+    }
+
+    private static void writeInfoToFile(String userName, String passWord, String userID, String time, File f){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(f, true));
+            writer.write(userName + "," + passWord + "," + userID + "," + time + "\n");
+            writer.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private static String generateUserID(){ //needs to check in the file if that ID already exits
+        String uniqueID = UUID.randomUUID().toString();
+        File f = new File("usersInfo.txt");
+        // 1) load existing IDs
+        Set<String> existing = new HashSet<>();
+        if (f.exists()) {
+            for (String[] e : allUserEntries(f))
+                if (e.length > 2) existing.add(e[2].trim());
+        }
+        // 2) loop until we find a new 6-char ID
+        String id;
+        do {
+            StringBuilder sb = new StringBuilder(6);
+            for (int i = 0; i < 6; i++)
+                sb.append(CHARS.charAt(RANDOM.nextInt(CHARS.length())));
+            id = sb.toString();
+        } while (existing.contains(id));
+        return id;
+        ///return uniqueID; //TODO: somehow make the ID shorter
+        //TODO: look in the file if that ID is already taken
+    }
+
+    public static boolean validatePassword (String passWord){
+        return passWord.length() >= 8;
+    }
+
+    private static String getCurrentTime(){
+        LocalDateTime time = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); //giving the date a pattern
+        String formattedTime = time.format(formatter); //converting that pattern to String
+        return formattedTime; // the method should return a String
+    }
+}
