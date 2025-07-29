@@ -23,7 +23,7 @@ public class App extends Application {
         stage.show();
 
         //second window
-        Scene scene2 = new Scene(loadFXML("primary"), 640, 480);
+        Scene scene2 = new Scene(loadFXML("sizeSelection"), 640, 480);
         Stage secondStage = new Stage();
         secondStage.setScene(scene2);
         secondStage.show();
