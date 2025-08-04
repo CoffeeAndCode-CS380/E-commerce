@@ -2,13 +2,14 @@ package ecommerce.com.login;
 
 import javax.imageio.IIOException;
 import java.io.*;
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class LoginUtils {
+    private static final String CHARS  = "abcdefghijklmnopqrstuvwxyz0123456789";
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static boolean saveLoginInfo(String userName, String passWord){
         String time = getCurrentTime();
@@ -24,7 +25,7 @@ public class LoginUtils {
             } else{ //if the file and the username exist
                 if(doPasswordsMatch(userName, passWord, f)){ //if username exists and passwords match
                     getExistingUserId(userName, f); // if the username exists, get the existing ID from file.
-                    //System.out.println("welcome back " + userName); //TODO: remove this print later
+                    System.out.println("welcome back " + userName); //TODO: remove this print later
                 }
             }
         } else { //if the file doesn't exist that will be the first user in the file.
@@ -88,9 +89,38 @@ public class LoginUtils {
     }
 
     private static String generateUserID(){ //needs to check in the file if that ID already exits
-        String uniqueID = UUID.randomUUID().toString();
-        return uniqueID; //TODO: somehow make the ID shorter
-        //TODO: look in the file if that ID is already taken
+        File f = new File("usersInfo.txt");
+
+        // 1) collect existing IDs
+        Set<String> existing = new HashSet<>();
+        if (f.exists()) {
+            for (String[] entry : allUserEntries(f)) {
+                if (entry.length > 2) {
+                    existing.add(entry[2].trim());
+                }
+            }
+        }
+
+        // 2) loop until we get a new 6-char ID
+        String id;
+        do {
+            StringBuilder sb = new StringBuilder(6);
+            for (int i = 0; i < 6; i++) {
+                sb.append(CHARS.charAt(RANDOM.nextInt(CHARS.length())));
+            }
+            id = sb.toString();
+        } while (existing.contains(id));
+        return id;
+    }
+
+    public static boolean isUserNameValid(String userName){
+        // String regex = "\".*[a-zA-Z]+.*";
+        String regex1=".*[a-zA-Z]+.*";
+        // Pattern pattern = Pattern.compile(regex);
+        //  Matcher matcher = pattern.matcher(userName);
+        boolean isValid = userName.matches(regex1);
+
+        return isValid;
     }
 
     public static boolean validatePassword (String passWord){
