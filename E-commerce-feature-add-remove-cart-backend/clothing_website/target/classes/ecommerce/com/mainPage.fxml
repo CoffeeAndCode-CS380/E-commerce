@@ -50,7 +50,7 @@
          <children>
             <ImageView fitHeight="24.0" fitWidth="29.0" layoutX="554.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
                <image>
-                  <Image url="@site%20icons/cart.jpg" />
+                  <Image url="@site icons/cart.jpg" />
                </image>
             </ImageView>
             <Button layoutX="555.0" layoutY="3.0" mnemonicParsing="false" opacity="0.01" prefHeight="13.0" prefWidth="21.0" text="cart" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
@@ -59,7 +59,7 @@
                   <TextField prefHeight="12.0" prefWidth="160.0" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;">
                      <image>
-                        <Image url="@site%20icons/search.png" />
+                        <Image url="@site icons/search.png" />
                      </image>
                   </ImageView>
                </children>
@@ -92,32 +92,32 @@
          <children>
             <ImageView fitHeight="142.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <image>
-                  <Image url="@site%20icons/light_blue_jeans.jpg" />
+                  <Image url="@site icons/light_blue_jeans.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="142.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
-                  <Image url="@site%20icons/white_hoodie.png" />
+                  <Image url="@site icons/white_hoodie.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="143.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
-                  <Image url="@site%20icons/grey_hoodie.jpg" />
+                  <Image url="@site icons/grey_hoodie.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="137.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@site%20icons/black_hoodie.jpg" />
+                  <Image url="@site icons/black_hoodie.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="144.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <image>
-                  <Image url="@site%20icons/blue_jeans.jpg" />
+                  <Image url="@site icons/blue_jeans.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="135.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
-                  <Image url="@site%20icons/black_jeans.jpg" />
+                  <Image url="@site icons/black_jeans.jpg" />
                </image>
             </ImageView>
             <Button mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="139.0" text="black jeans" GridPane.rowIndex="1" />
@@ -128,7 +128,7 @@
             <Button mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="142.0" text="black hoodie" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <image>
-                  <Image url="@site%20icons/blue_jeans.jpg" />
+                  <Image url="@site icons/blue_jeans.jpg" />
                </image>
             </ImageView>
          </children>

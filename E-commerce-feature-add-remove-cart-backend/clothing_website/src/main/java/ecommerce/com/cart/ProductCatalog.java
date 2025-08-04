@@ -1,9 +1,14 @@
 package ecommerce.com.cart;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import  java.util.*;
+import java.io.*;
+
 
 /**
  * mange invertry of prod
@@ -50,4 +55,17 @@ public class ProductCatalog {
     public void addProduct(Product product) { // method to add product
         products.add(product);               // add product to list
     }
+    public void loadFromFile(String filename) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                String id    = parts[0].trim();
+                String name  = parts[1].trim();
+                double price = Double.parseDouble(parts[2].trim());
+                addProduct(new Product(id, name, price));
+            }
+        }
+    }
+
 }

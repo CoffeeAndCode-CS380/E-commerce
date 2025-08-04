@@ -1,5 +1,5 @@
 
-package ecommerce.com.cart;
+package java.test.cart;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

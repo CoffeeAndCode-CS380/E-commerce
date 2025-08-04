@@ -1,0 +1,3 @@
+A1,T-Shirt,19.99
+B2,Jeans,39.99
+C3,Sweater,29.95
