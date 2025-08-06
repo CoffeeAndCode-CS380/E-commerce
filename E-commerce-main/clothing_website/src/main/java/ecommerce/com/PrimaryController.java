@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;   // or GridPane, depending on your layout
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 
 import java.util.List;
 
@@ -35,7 +36,14 @@ public class PrimaryController {
         // Optional: also wire Enter explicitly in code
         //mainSearchTextField.setOnAction(this::onSearch);
         //mainSearchTextField.setOnAction(evt -> onSearch(evt));
-
+        if (mainSearchTextField != null) {
+            mainSearchTextField.setOnKeyPressed(evt -> {
+                if (evt.getCode() == KeyCode.ENTER) {
+                    onSearch(new ActionEvent(mainSearchTextField, null));
+                    evt.consume();
+                }
+            });
+        }
     }
 
     /** Called when user presses Enter in the TextField or clicks your Search button */
