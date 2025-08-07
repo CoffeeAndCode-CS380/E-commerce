@@ -67,7 +67,7 @@
                   <Font name="System Bold Italic" size="11.0" />
                </font>
             </TextField>
-            <Button fx:id="LoginButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="login" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="login" />
          </children>
       </HBox>
       <GridPane layoutY="31.0" prefHeight="631.0" prefWidth="600.0" AnchorPane.bottomAnchor="-273.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
@@ -116,7 +116,7 @@
                </image>
             </ImageView>
             <Button fx:id="blackJeansButton" mnemonicParsing="false" onAction="#clickOnBlackJeans" opacity="0.0" prefHeight="139.0" prefWidth="139.0" text="black jeans" GridPane.rowIndex="2" />
-            <Button fx:id="blackJeansButton" mnemonicParsing="false" onAction="#clickOnBlueJeans" opacity="0.0" prefHeight="132.0" prefWidth="146.0" text="blue jeans" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="blueJeansButton" mnemonicParsing="false" onAction="#clickOnBlueJeans" opacity="0.0" prefHeight="132.0" prefWidth="146.0" text="blue jeans" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="grayHoodieButton" mnemonicParsing="false" onAction="#clickOnGreyHoodie" opacity="0.0" prefHeight="139.0" prefWidth="141.0" text="grey hoodie" GridPane.columnIndex="1" />
             <Button fx:id="lightBlueJeansButton" mnemonicParsing="false" onAction="#clickOnLightBlueJeans" opacity="0.01" prefHeight="139.0" prefWidth="146.0" text="light jeans" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Button fx:id="whiteHoodieButton" mnemonicParsing="false" onAction="#clickOnWhiteHoodie" opacity="0.0" prefHeight="139.0" prefWidth="144.0" text="white hoodie" GridPane.columnIndex="2" />

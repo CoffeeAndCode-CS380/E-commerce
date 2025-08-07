@@ -3,7 +3,10 @@ package ecommerce.com.cart;
 import java.util.*;
 
 /** User’s shopping cart */
-public class CartUtils {
+public class CartUtils extends ecommerce.com.product.Product {
+
+    private int quantity;
+
     private final List<Product> items = new ArrayList<>();  // holds cart items
 
     /** Add a product to the cart */
@@ -21,7 +24,7 @@ public class CartUtils {
     public double getTotal() {
         double total = 0;
         for (Product p : items) {
-            total += p.getPrice();
+            total += p.getPrice() * quantity;
         }
         return total;
     }

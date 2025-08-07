@@ -23,7 +23,7 @@ public class SearchController {
     private TextField searchTextField;
 
 
-    private void handleSearch(){
+    public void handleSearch(){
         String searchKey = searchTextField.getText().trim();
 
         if(searchKey.isEmpty()){ //TODO: change this so if they click on search when the field is empty doesn't do anything

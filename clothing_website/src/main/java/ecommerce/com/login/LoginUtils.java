@@ -13,9 +13,6 @@ public class LoginUtils {
 
     public static boolean saveLoginInfo(String userName, String passWord){
         String time = getCurrentTime();
-        if(!validatePassword(passWord)){ //TODO: remove this if later
-            return false;
-        }
         File f = new File("usersInfo.txt");
         if (f.exists() && !f.isDirectory()){ //check if the file exists
             if (!doesUserNameExist(userName, f)){ //if the username does not already exist in the file
@@ -25,7 +22,6 @@ public class LoginUtils {
             } else{ //if the file and the username exist
                 if(doPasswordsMatch(userName, passWord, f)){ //if username exists and passwords match
                     getExistingUserId(userName, f); // if the username exists, get the existing ID from file.
-                    System.out.println("welcome back " + userName); //TODO: remove this print later
                 }
             }
         } else { //if the file doesn't exist that will be the first user in the file.
@@ -39,7 +35,7 @@ public class LoginUtils {
     public static boolean doPasswordsMatch(String userName, String passWord, File f){
         for (String[] entry : allUserEntries(f)){
             if (entry[1].trim().equals(passWord.trim())){ // if the username exists, check if the passwords match
-                return true;
+                return entry[1].trim().equals(passWord.trim());
             }
         }
         return false; //passwords do not match
@@ -69,7 +65,7 @@ public class LoginUtils {
         return userEntries;
     }
 
-    private static boolean doesUserNameExist(String userName, File f){
+    public static boolean doesUserNameExist(String userName, File f){
         for (String[] entry : allUserEntries(f)){
             if (entry[0].trim().equals(userName.trim())){ //trim ignores the spaces
                 return true; //the username already exists in the file
@@ -124,7 +120,7 @@ public class LoginUtils {
     }
 
     public static boolean validatePassword (String passWord){
-        return passWord.length() >= 8;
+        return passWord.length() >= 6;
     }
 
     private static String getCurrentTime(){
@@ -132,5 +128,10 @@ public class LoginUtils {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); //giving the date a pattern
         String formattedTime = time.format(formatter); //converting that pattern to String
         return formattedTime; // the method should return a String
+    }
+
+    public static boolean isUserNameTaken(String userName){
+        File f = new File("usersInfo.txt");
+        return f.exists() && doesUserNameExist(userName, f);
     }
 }

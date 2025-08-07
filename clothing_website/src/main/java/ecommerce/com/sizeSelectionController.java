@@ -1,9 +1,11 @@
 package ecommerce.com;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.io.InputStream;
+
+import ecommerce.com.login.LoginController;
 import ecommerce.com.product.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,6 +30,7 @@ public class sizeSelectionController {
     @FXML private Button SizeMediumButton;
     @FXML private Button SizeLargeButton;
     @FXML private Button SizeXLargeButton;
+    @FXML private Button sizePageLoginButton;
 
     private Scene scene;
 
@@ -41,6 +44,23 @@ public class sizeSelectionController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Main Page");
+        stage.show();
+    }
+
+    @FXML
+    private void openLoginPage(ActionEvent event) throws IOException {
+        //this should take us from main to login page
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginPage.fxml"));
+        Parent root = loader.load();
+
+        LoginController controller = loader.getController(); //make a controller
+        controller.backToPreviousPage("sizeSelection"); //trigger the function from login controller to go back to the page
+                                                                   // that we went to login page from
+
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Login Page");
         stage.show();
     }
 

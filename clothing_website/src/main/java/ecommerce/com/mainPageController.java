@@ -2,6 +2,7 @@ package ecommerce.com;
 
 import java.io.IOException;
 
+import ecommerce.com.login.LoginController;
 import ecommerce.com.product.Product;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,7 @@ public class mainPageController {
     @FXML private Button blackJeansButton;
     @FXML private Button blueJeansButton;
     @FXML private Button lightBlueJeansButton;
+    @FXML private Button mainPageLoginButton;
 
     //to use in the openSizeSelectionPage method
     private Scene scene;
@@ -34,12 +36,29 @@ public class mainPageController {
         Parent root = loader.load();
 
         sizeSelectionController controller = loader.getController();
-        controller.putProduct(product);
+        controller.putProduct(product); //open the size selection page with the picture that we clicked on this is why it takes a product object
 
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Size Selection");
+        stage.show();
+    }
+
+    @FXML
+    private void openLoginPage(ActionEvent event) throws IOException {
+        //this should take us from main to login page
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginPage.fxml"));
+        Parent root = loader.load();
+
+        LoginController controller = loader.getController();
+        controller.backToPreviousPage("mainPage");//trigger the function from login controller to go back to the page
+                                                             // that we went to login page from
+
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Login Page");
         stage.show();
     }
 

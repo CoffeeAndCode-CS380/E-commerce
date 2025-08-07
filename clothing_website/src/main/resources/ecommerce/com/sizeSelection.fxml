@@ -32,7 +32,7 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="login" />
+                  <Button fx:id="sizePageLoginButton" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="login" />
                </children>
             </HBox>
          </children>
@@ -40,7 +40,7 @@
       <ScrollBar layoutX="596.0" layoutY="38.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="10.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
       <AnchorPane layoutX="50.0" layoutY="91.0" prefHeight="209.0" prefWidth="213.0" style="-fx-border-color: pink; -fx-blend-mode: red; -fx-background-color: blue;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="91.0">
          <children>
-            <ImageView fx:id="ImageOfProduct" fitHeight="192.0" fitWidth="223.0" layoutX="21.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="21.0" />
+            <ImageView fx:id="ImageOfProduct" blendMode="SRC_ATOP" fitHeight="192.0" fitWidth="223.0" layoutX="21.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="9.6" AnchorPane.topAnchor="7.2" />
          </children>
       </AnchorPane>
       <TextField fx:id="ProductDescription" layoutX="336.0" layoutY="91.0" prefHeight="26.0" prefWidth="206.0" text="DELETE THIS...Put item description" />
@@ -67,6 +67,6 @@
             <Button fx:id="SizeXLargeButton" mnemonicParsing="false" onAction="#clickOnChangeSize" text="XL" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <Button layoutX="337.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Button" />
+      <Button layoutX="337.0" layoutY="241.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" text="Add to cart" />
    </children>
 </AnchorPane>
