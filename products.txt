@@ -1,0 +1,10 @@
+T-Shirt,19.99,M,Clothing,TSH001,images/tshirt.jpg
+Jeans,49.99,L,Clothing,JNS002,images/jeans.jpg
+Sneakers,79.99,10,Shoes,SNK003,images/sneakers.jpg
+Jacket,89.99,XL,Clothing,JCK004,images/jacket.jpg
+Backpack,39.99,L,Accessories,BPK005,images/backpack.jpg
+Hat,15.50,S,Accessories,HAT006,images/hat.jpg
+Dress,59.99,M,Clothing,DRS007,images/dress.jpg
+Boots,99.95,9,Shoes,BTS008,images/boots.jpg
+Watch,129.99,M,Accessories,WTCH009,images/watch.jpg
+Socks,5.99,L,Clothing,SCK010,images/socks.jpg

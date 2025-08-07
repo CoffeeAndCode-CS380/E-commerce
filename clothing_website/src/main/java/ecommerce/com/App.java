@@ -18,15 +18,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
        //first window
+        //just open the first window, the size selection window will be open later
         scene = new Scene(loadFXML("mainPage"), 640, 480);
         stage.setScene(scene);
         stage.show();
-
-        //second window
-        Scene scene2 = new Scene(loadFXML("sizeSelection"), 640, 480);
-        Stage secondStage = new Stage();
-        secondStage.setScene(scene2);
-        secondStage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
