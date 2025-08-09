@@ -1,10 +1,8 @@
 package ecommerce.com.login;
 
-import ecommerce.com.sizeSelectionController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -43,32 +41,43 @@ public class LoginController {
         if(LoginUtils.doesUserNameExist(userName, f)){
             if(LoginUtils.doPasswordsMatch(userName, passWord, f)){
                 loginPageLabel.setText("welcome back!");
-                FXMLLoader loader = new FXMLLoader();
-                try{
-                    if("mainPage".equals(PreviousPage)){ // if the previous page was main page go back to main page after login
-                        loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
-                    } else if ("sizeSelection".equals(PreviousPage)) {
-                        loader = new FXMLLoader(getClass().getResource("/ecommerce/com/sizeSelection.fxml"));
-                    } else { // for safety in case the page file is not correct
-                        loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
-                    }
-                    Parent root = loader.load();
-                    Stage stage = (Stage) loginButton.getScene().getWindow();
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                } catch (IOException e){
-                    e.printStackTrace();
-                }
+                openPreviousPage();
             } else{
                 loginPageLabel.setText("incorrect password");
             }
         } else {
-            loginPageLabel.setText("username not found!");
+            LoginUtils.saveLoginInfo(userName, passWord);
+            loginPageLabel.setText("new user registered");
+            openPreviousPage();
         }
     }
 
-    public void backToPreviousPage(String pageName){
+    //after thr user clicks on the login button and it is successful this takes them to the previous page
+    private void openPreviousPage(){
+        FXMLLoader loader = new FXMLLoader();
+        try{
+            if("mainPage".equals(PreviousPage)){ // if the previous page was main page go back to main page after login
+                loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
+            } else if ("sizeSelection".equals(PreviousPage)) {
+                loader = new FXMLLoader(getClass().getResource("/ecommerce/com/sizeSelection.fxml"));
+            } else { // for safety in case the page file is not correct
+                loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
+            }
+            Parent root = loader.load();
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void PreviousPageName(String pageName){
         PreviousPage = pageName; //name of the previous page that we go to the login page from.
     }
 
+    @FXML
+    private void backButtonOnLogin(ActionEvent event){
+        FXMLLoader loader = new FXMLLoader();
+        openPreviousPage();
+    }
 }

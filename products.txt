@@ -8,3 +8,4 @@ Dress,59.99,M,Clothing,DRS007,images/dress.jpg
 Boots,99.95,9,Shoes,BTS008,images/boots.jpg
 Watch,129.99,M,Accessories,WTCH009,images/watch.jpg
 Socks,5.99,L,Clothing,SCK010,images/socks.jpg
+LightBlueJeans,60.00,S,clothing,DS9999,light_blue_jeans.jpg

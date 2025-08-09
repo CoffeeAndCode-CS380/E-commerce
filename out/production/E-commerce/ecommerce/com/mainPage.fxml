@@ -51,8 +51,8 @@
             <Button layoutX="555.0" layoutY="3.0" mnemonicParsing="false" opacity="0.01" prefHeight="13.0" prefWidth="21.0" text="cart" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
             <HBox alignment="TOP_RIGHT" layoutX="362.0" layoutY="-3.0" prefHeight="28.0" prefWidth="188.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="3.0">
                <children>
-                  <TextField fx:id="searchTextField" prefHeight="12.0" prefWidth="160.0" promptText="Search for an item" />
-                  <ImageView fx:id="searchIcon" fitHeight="25.0" fitWidth="28.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;">
+                  <TextField fx:id="searchTextField" onAction="#searchOnEnter" prefHeight="12.0" prefWidth="160.0" promptText="Search for an item" />
+                  <ImageView fx:id="searchIcon" fitHeight="25.0" fitWidth="28.0" nodeOrientation="INHERIT" onMouseClicked="#searchOnMagnifyingGlass" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;">
                      <image>
                         <Image url="@site%20icons/search.png" />
                      </image>

@@ -21,7 +21,6 @@ import javafx.scene.image.ImageView;
 public class sizeSelectionController {
 
     //declare variables needed
-    //@FXML private Label CoffeeAndCodeTextField;
     @FXML private ImageView ImageOfProduct;
     @FXML private TextField ProductDescription;
     @FXML private TextField ProductPrice;
@@ -30,11 +29,10 @@ public class sizeSelectionController {
     @FXML private Button SizeMediumButton;
     @FXML private Button SizeLargeButton;
     @FXML private Button SizeXLargeButton;
-    @FXML private Button sizePageLoginButton;
 
     private Scene scene;
 
-    //I changed CoffeeAndCode to a Label from a textfile so this works
+    //I changed CoffeeAndCode to a textfield from a label so this works
     @FXML
     private void backToMainPage(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPage.fxml"));
@@ -54,9 +52,8 @@ public class sizeSelectionController {
         Parent root = loader.load();
 
         LoginController controller = loader.getController(); //make a controller
-        controller.backToPreviousPage("sizeSelection"); //trigger the function from login controller to go back to the page
+        controller.PreviousPageName("sizeSelection"); //trigger the function from login controller to go back to the page
                                                                    // that we went to login page from
-
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
