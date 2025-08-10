@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="471.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.search.ResultsPageController">
+   <children>
+      <Label layoutX="26.0" layoutY="101.0" prefHeight="269.0" prefWidth="621.0" text="This is the search result page " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Label>
+      <ListView fx:id="resultsList" layoutX="420.0" layoutY="235.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
