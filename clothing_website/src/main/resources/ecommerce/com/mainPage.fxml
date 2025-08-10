@@ -100,18 +100,18 @@
                         <Image url="@site%20icons/black_jeans.jpg" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="139.0" text="black jeans" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" opacity="0.0" prefHeight="132.0" prefWidth="146.0" text="blue jeans" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="141.0" text="grey hoodie" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" opacity="0.01" prefHeight="139.0" prefWidth="146.0" text="light jeans" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="144.0" text="white hoodie" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" opacity="0.0" prefHeight="139.0" prefWidth="142.0" text="black hoodie" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <Button fx:id="blackJeans" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.0" prefHeight="139.0" prefWidth="139.0" text="black jeans" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button fx:id="blueJeans" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.0" prefHeight="132.0" prefWidth="146.0" text="blue jeans" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button fx:id="greyHoodie" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.0" prefHeight="139.0" prefWidth="141.0" text="grey hoodie" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button fx:id="whiteJeans" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.01" prefHeight="139.0" prefWidth="146.0" text="light jeans" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Button fx:id="whiteHoodie" graphicTextGap="10.0" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.0" prefHeight="139.0" prefWidth="144.0" text="white hoodie" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Button fx:id="blackHoodie" mnemonicParsing="false" onAction="#switchToSizeSelection" opacity="0.0" prefHeight="139.0" prefWidth="142.0" text="black hoodie" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fx:id="extensionTest" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <image>
                         <Image url="@site%20icons/blue_jeans.jpg" />
                      </image>
                   </ImageView>
-                  <TextField text="Black Hoodie :: $50" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField editable="false" text="Black Hoodie :: $50" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -122,27 +122,27 @@
                         <Blend />
                      </effect>
                   </TextField>
-                  <TextField text="Grey Hoodie" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <TextField editable="false" text="Grey Hoodie" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField prefHeight="26.0" prefWidth="180.0" text="White Hoodie :: $60" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <TextField editable="false" prefHeight="26.0" prefWidth="180.0" text="White Hoodie :: $60" GridPane.columnIndex="5" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField text="Black Jeans :: $90" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField editable="false" text="Black Jeans :: $90" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField text="Blue Jeans :: $80" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <TextField editable="false" text="Blue Jeans :: $80" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField text="Light Blue Jeans :: $80" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                  <TextField editable="false" text="Light Blue Jeans :: $80" GridPane.columnIndex="5" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>

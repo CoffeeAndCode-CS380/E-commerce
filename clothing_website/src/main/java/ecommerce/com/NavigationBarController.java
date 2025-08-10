@@ -24,11 +24,6 @@ public class NavigationBarController {
     }
 
     @FXML
-     protected void switchToSizeSelection() throws IOException{
-        App.setRoot("sizeSelectionPage");
-    }
-
-    @FXML
      protected void switchToLogin() throws IOException{
         App.setRoot("loginPage");
     }

@@ -23,10 +23,15 @@ public class App extends Application {
         stage.show();
 
         //second window
-        Scene scene2 = new Scene(loadFXML("sizeSelection"), 640, 480);
-        Stage secondStage = new Stage();
-        secondStage.setScene(scene2);
-        secondStage.show();
+     //   Scene scene2 = new Scene(loadFXML("sizeSelection"), 640, 480);
+     //   Stage secondStage = new Stage();
+     //   secondStage.setScene(scene2);
+     //   secondStage.show();
+//
+     //   Scene scene3 = new Scene(loadFXML("loginPage"), 640, 480);
+     //   Stage thirdStage = new Stage();
+     //   thirdStage.setScene(scene3);
+     //   thirdStage.show();
     }
 
     static void setRoot(String fxml) throws IOException {

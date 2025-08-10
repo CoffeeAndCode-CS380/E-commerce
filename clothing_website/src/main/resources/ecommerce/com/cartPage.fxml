@@ -22,7 +22,8 @@
          <children>
       
                     <!-- THE ListView: anchors make it resize with the window -->
-              <ListView fx:id="cartListView" editable="true" prefHeight="274.0" prefWidth="580.0" />
+              <ListView fx:id="cartListView" editable="true" orientation="HORIZONTAL" prefHeight="274.0" prefWidth="580.0" VBox.vgrow="ALWAYS" />
+              <fx:include source="cartItem.fxml" />
             <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="580.0" spacing="10">
                <children>
                   <Label alignment="CENTER_RIGHT" text="Total: $0.00" textFill="WHITE">

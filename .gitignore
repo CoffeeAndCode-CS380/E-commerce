@@ -25,3 +25,4 @@ replay_pid*
 
 #ignore Maven's build output(not meant to be tracked or manually changed)-Richie
 /target/
+/target/classes
