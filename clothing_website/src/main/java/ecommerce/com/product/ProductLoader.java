@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductLoader {
+
+    /**
+     * reads the product file line by line, separates the product attributes into 6 parts, then returns a list of products
+     * (product name, price, size, category, ID, image path)
+     * @return a list of product objects from the list
+     */
     public static List<Product> readFile(){
         List<Product> products = new ArrayList<>();
         try {
@@ -20,8 +26,8 @@ public class ProductLoader {
                     String productID = parts[4].trim();
                     String imagePath = parts[5].trim();
 
-                    Product product = new Product(productName, price, size, category, productID, imagePath); //cretae a product object
-                    products.add(product); //add them to the object
+                    Product product = new Product(productName, price, size, category, productID, imagePath); //create a product object
+                    products.add(product);
                 }
             }
             reader.close();
@@ -31,11 +37,11 @@ public class ProductLoader {
         return products;
     }
 
-    public static void fileParser(){
+    /*public static void fileParser(){
         List<Product> products = readFile();
         for (Product product : products){ //read contents of the product list
             // do something
         }
-    }
+    }*/
 
 }

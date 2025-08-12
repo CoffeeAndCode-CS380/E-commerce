@@ -1,13 +1,16 @@
 package ecommerce.com.cart;
 
+import ecommerce.com.product.Product;
+import javafx.collections.FXCollections;
+import javafx.collections.*;
 import java.util.*;
 
 /** User’s shopping cart */
-public class CartUtils extends ecommerce.com.product.Product {
+public class CartUtils {
 
-    private int quantity;
-
-    private final List<Product> items = new ArrayList<>();  // holds cart items
+    private static final CartUtils INSTANCE = new CartUtils();
+    public static CartUtils get() { return INSTANCE; }
+    private final ObservableList<Product> items = FXCollections.observableArrayList(); // holds cart items
 
     /** Add a product to the cart */
     public void addItem(Product product) {
@@ -22,11 +25,7 @@ public class CartUtils extends ecommerce.com.product.Product {
 
     /** Compute the total price of all items */
     public double getTotal() {
-        double total = 0;
-        for (Product p : items) {
-            total += p.getPrice() * quantity;
-        }
-        return total;
+        return items.stream().mapToDouble(Product::getPrice).sum();
     }
 
     /** @return number of items in the cart */
@@ -35,7 +34,8 @@ public class CartUtils extends ecommerce.com.product.Product {
     }
 
     /** @return unmodifiable view of the cart’s items */
-    public List<Product> getItems() {
-        return Collections.unmodifiableList(items);
+    public ObservableList<Product> getItems() {
+        return items;
     }
+
 }

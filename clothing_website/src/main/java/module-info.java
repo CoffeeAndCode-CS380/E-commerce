@@ -9,4 +9,7 @@ module ecommerce.com {
     opens ecommerce.com.login to javafx.fxml; //allow javafx to access everything in the login package
     exports ecommerce.com.search to javafx.fxml;
     opens  ecommerce.com.search to javafx.fxml;
+    exports ecommerce.com.product to javafx.fxml;
+    exports ecommerce.com.cart to javafx.fxml;
+    opens ecommerce.com.cart to javafx.fxml;
 }

@@ -6,7 +6,12 @@ import java.util.List;
 
 public class SearchUtils {
 
-    //check if the there is any with that search key inside the inventory, aka the list of our items
+    /**
+     * checks if the there is any with that search key inside the inventory, aka the list of our items
+     * @param inventory
+     * @param searchKey
+     * @return
+     */
     private static boolean containCharacter(String inventory, String searchKey){
         if(inventory == null || searchKey == null){
             return false;
@@ -14,6 +19,12 @@ public class SearchUtils {
         return inventory.toLowerCase().contains(searchKey.toLowerCase());
     }
 
+    /**
+     * searches through the list of products and returns the results with matching names
+     * @param productName
+     * @param products
+     * @return
+     */
     public static List<Product> searchByName(String productName, List<Product> products){
         if(productName == null || productName.isBlank()) return List.of(); //no search if search bar is empty or only has space in it
         List<Product> results = new ArrayList<>();

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.cart.CartController">
+
+    <!-- header bar (unchanged) -->
+    <children>
+        <fx:include source="navigationBar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Label layoutX="3.0" layoutY="33.0" text="YOUR CART" textFill="#ffbb00">
+            <font>
+                <Font name="Bookman Old Style Italic" size="20.0" />
+            </font>
+        </Label>
+        <VBox layoutX="8.0" layoutY="58.0" prefHeight="335.0" prefWidth="580.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="58.0">
+            <children>
+
+                <!-- THE ListView: anchors make it resize with the window -->
+                <ListView fx:id="cartListView" editable="true" orientation="HORIZONTAL" prefHeight="274.0" prefWidth="580.0" VBox.vgrow="ALWAYS" />
+                <fx:include source="cartItem.fxml" />
+                <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="580.0" spacing="10">
+                    <children>
+                        <Label fx:id="totalCart" alignment="CENTER_RIGHT" text="Total: $0.00" textFill="WHITE">
+                            <font>
+                                <Font name="Bookman Old Style" size="16.0" />
+                            </font>
+                        </Label>
+                        <Button mnemonicParsing="false" text="Checkout">
+                            <font>
+                                <Font name="Bookman Old Style" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

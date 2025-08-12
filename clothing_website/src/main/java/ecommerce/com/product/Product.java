@@ -9,6 +9,15 @@ public class Product {
     private String imagePath;
 
 
+    /**
+     * contructor
+     * @param productName
+     * @param price
+     * @param size
+     * @param category
+     * @param productID
+     * @param imagePath
+     */
     public Product(String productName, double price, String size, String category, String productID, String imagePath) {
         this.productName = productName;
         this.price = price;
@@ -56,7 +65,7 @@ public class Product {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID() {
         this.productID = productID;
     }
 

@@ -5,16 +5,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" style="-fx-background-color: #ECECE&amp;;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.login.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="633.0" style="-fx-background-color: #ECECE&amp;;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.login.LoginController">
+    <top>
+        <fx:include source="navigationBar.fxml" />
+    </top>
     <left>
-        <AnchorPane prefHeight="400.0" prefWidth="195.0" style="-fx-background-color: #FF2400;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="400.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="loginBackButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnLogin" text="&lt;" />
-            </children></AnchorPane>
+        <AnchorPane prefHeight="436.0" prefWidth="131.0" style="-fx-background-color: #FF2400;" BorderPane.alignment="CENTER" />
     </left>
     <right>
-        <AnchorPane prefHeight="359.0" prefWidth="304.0" style="-fx-background-color: #ECECE&amp;;" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="436.0" prefWidth="409.0" style="-fx-background-color: #ECECE&amp;;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView blendMode="MULTIPLY" fitHeight="62.0" fitWidth="66.0" layoutX="131.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -36,7 +35,7 @@
                     <font>
                         <Font size="13.0" />
                     </font></Button>
-                <Label fx:id="loginPageLabel" alignment="CENTER" layoutX="78.0" layoutY="242.0" prefHeight="67.0" prefWidth="176.0" style="-fx-background-color: #ECECE&amp;;" textAlignment="CENTER" textFill="RED" wrapText="true">
+                <Label fx:id="loginPageLabel" alignment="CENTER" layoutX="78.0" layoutY="250.0" prefHeight="59.0" prefWidth="176.0" style="-fx-background-color: #ECECE&amp;;" textAlignment="CENTER" textFill="RED" wrapText="true">
                     <font>
                         <Font size="13.0" />
                     </font>

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ResultsPageController {
 
-    @FXML
+    /*@FXML
     private ListView<String> resultsList;
 
     public void setResults(List<Product> products) {
@@ -20,7 +20,7 @@ public class ResultsPageController {
             productNames.add(product.getProductName());
         }
         resultsList.setItems(productNames);
-    }
+    }*/
 
 }
 

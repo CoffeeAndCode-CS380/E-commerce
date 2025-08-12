@@ -2,7 +2,7 @@ package ecommerce.com;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+import ecommerce.com.cart.CartUtils;
 import ecommerce.com.login.LoginController;
 import ecommerce.com.product.Product;
 import javafx.event.ActionEvent;
@@ -29,41 +29,20 @@ public class sizeSelectionController {
     @FXML private Button SizeMediumButton;
     @FXML private Button SizeLargeButton;
     @FXML private Button SizeXLargeButton;
+    @FXML private Button addToCartButton;
 
     private Scene scene;
+    private Product currentProduct;
 
-    //I changed CoffeeAndCode to a textfield from a label so this works
-    @FXML
-    private void backToMainPage(MouseEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPage.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Main Page");
-        stage.show();
-    }
-
-    @FXML
-    private void openLoginPage(ActionEvent event) throws IOException {
-        //this should take us from main to login page
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginPage.fxml"));
-        Parent root = loader.load();
-
-        LoginController controller = loader.getController(); //make a controller
-        controller.PreviousPageName("sizeSelection"); //trigger the function from login controller to go back to the page
-                                                                   // that we went to login page from
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Login Page");
-        stage.show();
-    }
-
+    /**
+     * put the picture of the selected item in the image box of size selection page
+     * @param product
+     */
     //a method to display the image on the size selection page based on its image path that we have in the source.
     @FXML
     public void putProduct(Product product){
+
+        currentProduct = product;
         String imagePath = product.getImagePath(); //save the image path in a string using the constructor we have.
 
         // with this line we can load the image
@@ -82,6 +61,10 @@ public class sizeSelectionController {
         ProductSize.setText(product.getSize());
     }
 
+    /**
+     * changes the size of the clothes
+     * @param event
+     */
     public void clickOnChangeSize(javafx.event.ActionEvent event) {
         Object source = event.getSource();
 
@@ -94,5 +77,12 @@ public class sizeSelectionController {
         } else if(source == SizeXLargeButton) {
             ProductSize.setText("XL");
         }
+    }
+
+    @FXML
+    public void clickOnAddToCart(ActionEvent event){
+        Product selectedProduct = currentProduct;
+        putProduct(selectedProduct);
+        CartUtils.get().addItem(selectedProduct);
     }
 }

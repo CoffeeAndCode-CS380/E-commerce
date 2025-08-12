@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -73,11 +72,5 @@ public class LoginController {
     }
     public void PreviousPageName(String pageName){
         PreviousPage = pageName; //name of the previous page that we go to the login page from.
-    }
-
-    @FXML
-    private void backButtonOnLogin(ActionEvent event){
-        FXMLLoader loader = new FXMLLoader();
-        openPreviousPage();
     }
 }

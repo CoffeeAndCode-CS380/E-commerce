@@ -1,5 +1,7 @@
 package ecommerce.com.cart;
 
+import ecommerce.com.product.Product;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -21,7 +23,7 @@ public class ProductCatalog {
      */
     public Optional<Product> findById(String id) { // method to find by id
         for (Product p : products) {               // iterate through products
-            if (p.getId().equals(id)) {            // check for id match
+            if (p.getProductID().equals(id)) {            // check for id match
                 return Optional.of(p);             // return found product
             }
         }
@@ -36,7 +38,7 @@ public class ProductCatalog {
     public List<Product> searchByName(String nameFragment) { // method to search by name
         List<Product> result = new ArrayList<>();            // list for results
         for (Product p : products) {                         // iterate through products
-            if (p.getName().toLowerCase().contains(nameFragment.toLowerCase())) { // case-insensitive match
+            if (p.getProductName().toLowerCase().contains(nameFragment.toLowerCase())) { // case-insensitive match
                 result.add(p);                              // add matching product
             }
         }

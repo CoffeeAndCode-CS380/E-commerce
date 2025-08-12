@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: orange; -fx-border-color: red;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.NavigationBarController">
+    <children>
+        <ImageView fitHeight="24.0" fitWidth="29.0" layoutX="554.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+            <image>
+                <Image url="@site%20icons/cart.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="cartButton" layoutX="555.0" layoutY="3.0" mnemonicParsing="false" onAction="#switchToCart" opacity="0.01" prefHeight="13.0" prefWidth="21.0" text="cart" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+        <HBox alignment="TOP_RIGHT" layoutX="362.0" layoutY="-3.0" prefHeight="28.0" prefWidth="188.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="3.0">
+            <children>
+                <TextField fx:id="searchTextField" onAction="#searchOnEnter" prefHeight="12.0" prefWidth="160.0" />
+                <ImageView fx:id="searchButton" fitHeight="25.0" fitWidth="28.0" nodeOrientation="INHERIT" onMouseClicked="#searchOnMagnifyingGlass" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: darken;">
+                    <image>
+                        <Image url="@site%20icons/search.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+        <HBox prefHeight="26.0" prefWidth="225.0" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="3.0">
+            <children>
+                <Label fx:id="CoffeeAndCodeLable" focusTraversable="false" onMouseClicked="#backToMainPage" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: orange; -fx-font-weight: bold;" text="CoffeeAndCode">
+                    <font>
+                        <Font name="System Bold Italic" size="11.0" />
+                    </font>
+                </Label>
+                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#openLoginPage" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: brown; -fx-font-weight: bold;" text="login" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

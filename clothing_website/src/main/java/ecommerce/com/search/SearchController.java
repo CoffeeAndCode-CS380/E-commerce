@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 
-public class SearchController {
+public class SearchController{
 
 
 

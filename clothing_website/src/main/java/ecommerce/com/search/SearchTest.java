@@ -2,7 +2,6 @@ package ecommerce.com.search;
 
 import ecommerce.com.product.Product;
 import ecommerce.com.product.ProductLoader;
-
 import java.util.List;
 import java.util.Set;
 import java.util.LinkedHashSet;
