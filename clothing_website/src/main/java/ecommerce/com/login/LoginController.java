@@ -29,7 +29,7 @@ public class LoginController {
      * handles the action of clicking on the login button in the login page
      * this method gets the inputted username and password by user, validates them and
      * checks them with the existing user information
-     * @param event
+     * @param event the event
      */
     @FXML
     private void clickOnLoginButton(ActionEvent event) {
@@ -84,7 +84,7 @@ public class LoginController {
     /**
      * this method takes the name of the previous page as a string and stores it to use
      * in the openPreviousPage method
-     * @param pageName
+     * @param pageName the page name
      */
     public void PreviousPageName(String pageName){
         PreviousPage = pageName; //name of the previous page that we go to the login page from.

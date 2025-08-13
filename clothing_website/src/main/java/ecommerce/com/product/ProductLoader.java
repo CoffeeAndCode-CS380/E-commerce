@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * this class loads products from a text file
+ * this class loads products from a text file to the resources folder
  */
 public class ProductLoader {
 
@@ -40,11 +40,5 @@ public class ProductLoader {
         return products;
     }
 
-    /*public static void fileParser(){
-        List<Product> products = readFile();
-        for (Product product : products){ //read contents of the product list
-            // do something
-        }
-    }*/
 
 }

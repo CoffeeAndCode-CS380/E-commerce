@@ -16,9 +16,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * this class handles teh logic for the cart page
+ * this class handles javafx logic for the cart page
  */
 public class CartController {
+    /**
+     * variables for class
+     */
 
     @FXML private ListView<Product> cartListView;
     @FXML private Label totalCart;
@@ -26,13 +29,19 @@ public class CartController {
 
     private Scene scene;
 
-    //TODO: Hermiela will comment on this
+
+
+    /**
+     * Initializes the cart view when fxml loads.
+     * it loads the cart items in to display list and formates them
+     *
+     */
     @FXML
     private void initialize() {
-        var items = CartUtils.get().getItems();
-        cartListView.setItems(items);
-        cartListView.setCellFactory(lv -> new CartItemCell());
-
+        var items = CartUtils.get().getItems(); //get cart
+        cartListView.setItems(items); //show items in list view
+        cartListView.setCellFactory(lv -> new CartItemCell()); //use layout for each item
+//update total labels s cart items changes
         totalCart.textProperty().bind(
                 Bindings.createStringBinding(() -> String.format("Total: $%.2f", CartUtils.get().getTotal()), items)
         );
@@ -77,8 +86,8 @@ public class CartController {
 
         /**
          * this method places the picture and product information of the selected item in the cart
-         * @param prod
-         * @param empty
+         * @param prod the {@link Product} items to be displayed
+         * @param  empty the empty
          */
         @Override
         protected void updateItem(Product prod, boolean empty){
@@ -111,8 +120,8 @@ public class CartController {
 
     /**
      * this method takes the user from the cart page to the checkout page by clicking on the checkout button in cart page
-     * @param event
-     * @throws IOException
+     * @param event tricked when clicking checkout button
+     * @throws IOException if the FXML file {@code checkout.fxml}cannot be loaded
      */
     @FXML
     private void clickOnCheckoutButton(javafx.event.ActionEvent event) throws IOException {

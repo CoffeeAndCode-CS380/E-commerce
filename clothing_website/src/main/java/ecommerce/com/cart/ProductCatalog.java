@@ -8,10 +8,16 @@ import java.util.List;
 import  java.util.*;
 
 /**
- * mange invertry of prod
+ * manages inventory list of product items
  */
 public class ProductCatalog {
     private List<Product> products = new ArrayList<>();
+
+    /**
+     * Get all products
+     *
+     * @return list of products
+     */
 
     public  List<Product> getProducts(){
         return Collections.unmodifiableList(products);

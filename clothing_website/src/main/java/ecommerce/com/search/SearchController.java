@@ -15,6 +15,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * handles search actions or logic
+ */
 
 public class SearchController{
 

@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.*;
 import java.util.*;
 
-/** User’s shopping cart */
+/**  a CartUtil that handles User’s shopping cart  interactions  and calculate total*/
 public class CartUtils {
 
     private static final CartUtils INSTANCE = new CartUtils();
@@ -14,7 +14,8 @@ public class CartUtils {
 
     /**
      * Add a product to the cart
-     * @param product
+     * @param product product
+     *
      */
     public void addItem(Product product) {
         items.add(product);
@@ -22,24 +23,30 @@ public class CartUtils {
 
     /**
      * Remove a product from the cart
-     * @param product
+     * @param product  product to be removed
      * @return true if it was present & removed, false otherwise
      */
     public boolean removeItem(Product product) {
         return items.remove(product);
     }
 
-    /** Compute the total price of all items */
+
+    /** Compute the total price of all items
+     * @return total cost
+     * */
     public double getTotal() {
         return items.stream().mapToDouble(Product::getPrice).sum();
     }
 
-    /** @return number of items in the cart */
+    /**
+     * @return number of items in the cart */
     public int getItemCount() {
         return items.size();
     }
 
-    /** @return unmodifiable view of the cart’s items */
+    /**return the observable list of products in the cart
+     * i.e. view of the cart’s items
+     *  */
     public ObservableList<Product> getItems() {
         return items;
     }
