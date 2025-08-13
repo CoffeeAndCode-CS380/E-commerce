@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * this class handles the logic for the login page
+ */
 public class LoginController {
 
     @FXML private Button loginButton;
@@ -21,6 +24,13 @@ public class LoginController {
 
     private static String PreviousPage;
 
+
+    /**
+     * handles the action of clicking on the login button in the login page
+     * this method gets the inputted username and password by user, validates them and
+     * checks them with the existing user information
+     * @param event
+     */
     @FXML
     private void clickOnLoginButton(ActionEvent event) {
         String userName = userNameTextField.getText();
@@ -51,14 +61,14 @@ public class LoginController {
         }
     }
 
-    //after thr user clicks on the login button and it is successful this takes them to the previous page
-    private void openPreviousPage(){
+    /**
+     * this method takes the user back to the main page after a successful login
+     */
+    private void openPreviousPage(){ //after thr user clicks on the login button and it is successful this takes them to the previous page
         FXMLLoader loader = new FXMLLoader();
         try{
             if("mainPage".equals(PreviousPage)){ // if the previous page was main page go back to main page after login
                 loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
-            } else if ("sizeSelection".equals(PreviousPage)) {
-                loader = new FXMLLoader(getClass().getResource("/ecommerce/com/sizeSelection.fxml"));
             } else { // for safety in case the page file is not correct
                 loader = new FXMLLoader(getClass().getResource("/ecommerce/com/mainPage.fxml"));
             }
@@ -70,6 +80,12 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * this method takes the name of the previous page as a string and stores it to use
+     * in the openPreviousPage method
+     * @param pageName
+     */
     public void PreviousPageName(String pageName){
         PreviousPage = pageName; //name of the previous page that we go to the login page from.
     }

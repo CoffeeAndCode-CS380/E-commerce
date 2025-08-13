@@ -1,5 +1,8 @@
 package ecommerce.com.product;
 
+/**
+ * this is the mian product class that has the getters and setters
+ */
 public class Product {
     private String productName;
     private double price;
@@ -7,10 +10,11 @@ public class Product {
     private String category;
     private String productID;
     private String imagePath;
+    private int quantity;
 
 
     /**
-     * contructor
+     * constructor
      * @param productName
      * @param price
      * @param size
@@ -76,4 +80,8 @@ public class Product {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
+
+    public Integer getQuantity() { return quantity; }
+
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 }

@@ -20,6 +20,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * this class handle the logic related to the navigation bar. Allowing users to transition between website pages.
+ */
 public class NavigationBarController{
 
     //declaring all the variables from their fx:id from scene builder here
@@ -35,7 +38,7 @@ public class NavigationBarController{
     }*/
 
     /**
-     * Switches to cart page by clicking on the cart
+     * Switches to cart page by clicking on the cart icon
      * @param event
      * @throws IOException
      */
@@ -62,7 +65,7 @@ public class NavigationBarController{
     }*/
 
     /**
-     * handle search by clicking enter
+     * executes search by hitting enter
      * @param actionEvent
      */
     @FXML
@@ -71,7 +74,7 @@ public class NavigationBarController{
     }
 
     /**
-     * handle search by clicking on magnifying glass
+     * executes search by clicking on magnifying glass with mouse
      * @param mouseEvent
      */
     @FXML
@@ -81,6 +84,8 @@ public class NavigationBarController{
 
     /**
      * uses the search methods in SearchUtils class, creates 3 lists and then merges them into one result list
+     * 3 lists (resultByName, resultBySize, resultByCategory) into -> finalResult
+     *
      */
     @FXML
     public void handleSearch(){
@@ -109,12 +114,17 @@ public class NavigationBarController{
         openSearchResultPage(finalResult);
     }
 
+    /**
+     * based on the results of the search opens the search result page after hitting enter or clicking on the magnifying glass.
+     * @param finalResult
+     */
     private void openSearchResultPage(List<Product> finalResult){
         try { //open a new scene here that is all
             FXMLLoader loader = new FXMLLoader(getClass().getResource("searchResultsPage.fxml"));
             Parent root = loader.load();
 
             ResultsPageController controller = loader.getController();
+            controller.setResults(finalResult);
             //controller.setResults(finalResult);
 
             //open a new scene
@@ -128,7 +138,7 @@ public class NavigationBarController{
     }
 
     /**
-     * opens the login page by clicking on the login button in nav bar
+     * opens the login page by clicking on the login button in navigation bar
      * @param event
      * @throws IOException
      */
@@ -151,7 +161,7 @@ public class NavigationBarController{
     }
 
     /**
-     * takes you back to the main page by clicking on CoffeeAndCode
+     * takes you back to the main page by clicking on CoffeeAndCode icon
      * @param event
      * @throws IOException
      */

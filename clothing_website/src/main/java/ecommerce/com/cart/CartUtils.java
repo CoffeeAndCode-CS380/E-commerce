@@ -12,13 +12,19 @@ public class CartUtils {
     public static CartUtils get() { return INSTANCE; }
     private final ObservableList<Product> items = FXCollections.observableArrayList(); // holds cart items
 
-    /** Add a product to the cart */
+    /**
+     * Add a product to the cart
+     * @param product
+     */
     public void addItem(Product product) {
         items.add(product);
     }
 
-    /** Remove a product from the cart
-     * @return true if it was present & removed, false otherwise */
+    /**
+     * Remove a product from the cart
+     * @param product
+     * @return true if it was present & removed, false otherwise
+     */
     public boolean removeItem(Product product) {
         return items.remove(product);
     }

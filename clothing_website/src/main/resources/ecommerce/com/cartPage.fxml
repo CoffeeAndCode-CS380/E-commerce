@@ -18,8 +18,7 @@
             <children>
 
                 <!-- THE ListView: anchors make it resize with the window -->
-                <ListView fx:id="cartListView" editable="true" orientation="HORIZONTAL" prefHeight="274.0" prefWidth="580.0" VBox.vgrow="ALWAYS" />
-                <fx:include source="cartItem.fxml" />
+                <ListView fx:id="cartListView" editable="true" orientation="HORIZONTAL" prefHeight="314.0" prefWidth="580.0" VBox.vgrow="ALWAYS" />
                 <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="580.0" spacing="10">
                     <children>
                         <Label fx:id="totalCart" alignment="CENTER_RIGHT" text="Total: $0.00" textFill="WHITE">
@@ -27,7 +26,7 @@
                                 <Font name="Bookman Old Style" size="16.0" />
                             </font>
                         </Label>
-                        <Button mnemonicParsing="false" text="Checkout">
+                        <Button mnemonicParsing="false" onAction="#clickOnCheckoutButton" text="Checkout">
                             <font>
                                 <Font name="Bookman Old Style" size="12.0" />
                             </font>

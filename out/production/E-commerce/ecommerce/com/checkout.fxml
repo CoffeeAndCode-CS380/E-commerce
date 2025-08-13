@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.cart.CartController">
+
+    <!-- header bar (unchanged) -->
+    <children>
+        <fx:include source="navigationBar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <SplitPane dividerPositions="0.36565096952908577" layoutX="7.0" layoutY="35.0" prefHeight="356.0" prefWidth="587.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="202.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Shipping">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField layoutX="11.0" layoutY="36.0" promptText="Address">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField layoutX="12.0" layoutY="71.0" promptText="City">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField layoutX="14.0" layoutY="243.0" promptText="State">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField layoutX="14.0" layoutY="139.0" promptText="Zipcode">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <ChoiceBox fx:id="stateChoiceBox" layoutX="11.0" layoutY="106.0" prefWidth="150.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Payment Information">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <Button fx:id="checkoutButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#clickOnCheckoutButton" text="Pay Now" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+            <font>
+                <Font name="Bookman Old Style" size="14.0" />
+            </font>
+        </Button>
+
+    </children>
+</AnchorPane>

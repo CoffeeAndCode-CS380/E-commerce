@@ -19,6 +19,9 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
+/**
+ * Our main is the pilot of our program
+ */
 public class MainPageController extends NavigationBarController{
 
     //to use in the openSizeSelectionPage method

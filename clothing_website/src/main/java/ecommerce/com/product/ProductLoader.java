@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * this class loads products from a text file
+ */
 public class ProductLoader {
 
     /**

@@ -15,6 +15,11 @@ public class App extends Application {
 
     private static Scene scene;
 
+    /**
+     * opens the main page of the program
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
        //first window
