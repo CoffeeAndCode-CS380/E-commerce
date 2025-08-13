@@ -9,3 +9,51 @@ Boots,99.95,9,Shoes,BTS008,images/boots.jpg
 Watch,129.99,M,Accessories,WTCH009,images/watch.jpg
 Socks,5.99,L,Clothing,SCK010,images/socks.jpg
 LightBlueJeans,60.00,S,clothing,DS9999,light_blue_jeans.jpg
+Hooded sweater, 58.00,M,Clothing,WEA000,pink_hood_sweater.jpg
+Green Hoodie,60.00,L,Clothing,HD006,images/green_hoodie.jpg
+Beige Hoodie,57.99,M,Clothing,HD007,images/beige_hoodie.jpg
+Brown Hoodie,61.00,L,Clothing,HD008,images/brown_hoodie.jpg
+Navy Hoodie,59.50,M,Clothing,HD009,images/navy_hoodie.jpg
+Pink Hoodie,63.25,S,Clothing,HD010,images/pink_hoodie.jpg
+Black Cargo Pants,52.99,M,Clothing,PN008,images/black_cargo_pants.jpg
+Charcoal Hoodie,62.00,M,Clothing,HD021,images/charcoal_hoodie.jpg
+Maroon Hoodie,64.99,L,Clothing,HD022,images/maroon_hoodie.jpg
+Sky Blue Hoodie,59.50,S,Clothing,HD023,images/sky_blue_hoodie.jpg
+Mustard Hoodie,61.25,M,Clothing,HD024,images/mustard_hoodie.jpg
+Forest Green Hoodie,63.00,L,Clothing,HD025,images/forest_green_hoodie.jpg
+Pastel Pink Hoodie,60.75,S,Clothing,HD026,images/pastel_pink_hoodie.jpg
+Stone Grey Hoodie,58.99,M,Clothing,HD027,images/stone_grey_hoodie.jpg
+Cream Hoodie,62.50,L,Clothing,HD028,images/cream_hoodie.jpg
+Teal Hoodie,61.00,M,Clothing,HD029,images/teal_hoodie.jpg
+Burgundy Hoodie,64.50,XL,Clothing,HD030,images/burgundy_hoodie.jpg
+Stonewash Jeans,55.99,M,Clothing,PN021,images/stonewash_jeans.jpg
+Black Slim Jeans,57.50,L,Clothing,PN022,images/black_slim_jeans.jpg
+Dark Indigo Jeans,54.75,S,Clothing,PN023,images/dark_indigo_jeans.jpg
+Classic Blue Jeans,52.00,M,Clothing,PN024,images/classic_blue_jeans.jpg
+Light Wash Jeans,50.99,L,Clothing,PN025,images/light_wash_jeans.jpg
+Ripped Black Jeans,56.25,M,Clothing,PN026,images/ripped_black_jeans.jpg
+Olive Chinos,49.50,L,Clothing,PN027,images/olive_chinos.jpg
+Khaki Chinos,48.99,S,Clothing,PN028,images/khaki_chinos.jpg
+Grey Dress Pants,53.75,M,Clothing,PN029,images/grey_dress_pants.jpg
+Navy Dress Pants,54.99,L,Clothing,PN030,images/navy_dress_pants.jpg
+Sand Hoodie,120.00,L,Clothing,HD031,images/sand_hoodie.jpg
+Onyx Hoodie,125.00,M,Clothing,HD032,images/onyx_hoodie.jpg
+Stone Hoodie,118.00,XL,Clothing,HD033,images/stone_hoodie.jpg
+Clay Hoodie,122.50,L,Clothing,HD034,images/clay_hoodie.jpg
+Ash Hoodie,119.00,M,Clothing,HD035,images/ash_hoodie.jpg
+Taupe Hoodie,121.50,S,Clothing,HD036,images/taupe_hoodie.jpg
+Bone Hoodie,124.00,L,Clothing,HD037,images/bone_hoodie.jpg
+Earth Hoodie,126.50,M,Clothing,HD038,images/earth_hoodie.jpg
+Charcoal Hoodie,123.00,XL,Clothing,HD039,images/charcoal_hoodie.jpg
+Dust Hoodie,120.75,L,Clothing,HD040,images/dust_hoodie.jpg
+Sand Sweatpants,110.00,L,Clothing,PN031,images/sand_sweatpants.jpg
+Onyx Sweatpants,115.00,M,Clothing,PN032,images/onyx_sweatpants.jpg
+Stone Sweatpants,108.00,XL,Clothing,PN033,images/stone_sweatpants.jpg
+Clay Sweatpants,112.50,L,Clothing,PN034,images/clay_sweatpants.jpg
+Ash Sweatpants,109.00,M,Clothing,PN035,images/ash_sweatpants.jpg
+Taupe Sweatpants,111.50,S,Clothing,PN036,images/taupe_sweatpants.jpg
+Bone Sweatpants,114.00,L,Clothing,PN037,images/bone_sweatpants.jpg
+Earth Sweatpants,116.50,M,Clothing,PN038,images/earth_sweatpants.jpg
+Charcoal Sweatpants,113.00,XL,Clothing,PN039,images/charcoal_sweatpants.jpg
+Dust Sweatpants,110.75,L,Clothing,PN040,images/dust_sweatpants.jpg
+
