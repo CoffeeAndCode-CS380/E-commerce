@@ -1,15 +1,24 @@
 package ecommerce.com;
 
+import java.io.IOException;
 import java.io.InputStream;
+
+import ecommerce.com.cart.CartController;
 import ecommerce.com.cart.CartUtils;
+import ecommerce.com.login.LoginController;
 import ecommerce.com.product.Product;
+import ecommerce.com.search.ResultsPageController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * this class handles all the logic related to the size selection page
@@ -77,6 +86,14 @@ public class sizeSelectionController {
             selectedSize = "XL";
         }
         ProductSize.setText(selectedSize); //keeps the size dynamic and not just medium anymore
+        highlightSize(selectedSize);
+    }
+
+    private void highlightSize(String size) {
+        if (SizeSmallButton != null)  SizeSmallButton.setDefaultButton("S".equals(size));
+        if (SizeMediumButton != null) SizeMediumButton.setDefaultButton("M".equals(size));
+        if (SizeLargeButton != null)  SizeLargeButton.setDefaultButton("L".equals(size));
+        if (SizeXLargeButton != null) SizeXLargeButton.setDefaultButton("XL".equals(size));
     }
 
     /**
@@ -84,7 +101,7 @@ public class sizeSelectionController {
      * @param event
      */
     @FXML
-    public void clickOnAddToCart(ActionEvent event){
+    public void clickOnAddToCart(ActionEvent event) throws IOException{
         Product selectedProduct = new Product(currentProduct.getProductName(),
                                               currentProduct.getPrice(),
                                               selectedSize, // the dynamic size
@@ -93,5 +110,16 @@ public class sizeSelectionController {
                                               currentProduct.getImagePath());
         putProduct(selectedProduct);
         CartUtils.get().addItem(selectedProduct);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("cartPage.fxml"));
+        Parent root = loader.load();
+
+        CartController controller = loader.getController();
+
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Login Page");
+        stage.show();
     }
 }

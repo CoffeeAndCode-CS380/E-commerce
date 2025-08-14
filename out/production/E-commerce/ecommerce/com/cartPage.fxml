@@ -26,7 +26,7 @@
                                 <Font name="Bookman Old Style" size="16.0" />
                             </font>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#clickOnCheckoutButton" text="Checkout">
+                        <Button fx:id="checkoutButton" mnemonicParsing="false" onAction="#clickOnCheckoutButton" text="Checkout">
                             <font>
                                 <Font name="Bookman Old Style" size="12.0" />
                             </font>

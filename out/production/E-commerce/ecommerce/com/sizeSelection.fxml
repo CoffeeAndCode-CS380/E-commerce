@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-blend-mode: darken; -fx-background-color: teal;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.sizeSelectionController">
    <children>
       <fx:include source="navigationBar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane layoutX="50.0" layoutY="91.0" prefHeight="209.0" prefWidth="213.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="91.0">
+      <AnchorPane layoutX="50.0" layoutY="91.0" prefHeight="209.0" prefWidth="213.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="91.0">
          <children>
             <ImageView fx:id="ImageOfProduct" fitHeight="192.0" fitWidth="223.0" layoutX="21.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
          </children>

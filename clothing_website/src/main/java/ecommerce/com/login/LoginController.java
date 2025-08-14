@@ -24,7 +24,6 @@ public class LoginController {
 
     private static String PreviousPage;
 
-
     /**
      * handles the action of clicking on the login button in the login page
      * this method gets the inputted username and password by user, validates them and

@@ -125,7 +125,6 @@ public class NavigationBarController{
 
             ResultsPageController controller = loader.getController();
             controller.setResults(finalResult);
-            //controller.setResults(finalResult);
 
             //open a new scene
             Stage stage = new Stage();

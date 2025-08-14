@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.cart.CartController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.CheckoutController">
 
     <!-- header bar (unchanged) -->
     <children>
@@ -52,7 +52,7 @@
                 </AnchorPane>
             </items>
         </SplitPane>
-        <Button fx:id="checkoutButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#clickOnCheckoutButton" text="Pay Now" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+        <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Pay Now" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
             <font>
                 <Font name="Bookman Old Style" size="14.0" />
             </font>
