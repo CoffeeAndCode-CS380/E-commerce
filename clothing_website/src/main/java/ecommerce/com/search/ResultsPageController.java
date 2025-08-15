@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -19,7 +18,6 @@ import java.util.List;
 /**
  * show products in a list and allow user to select size
  */
-
 
 public class ResultsPageController {
 

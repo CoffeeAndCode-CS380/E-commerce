@@ -9,50 +9,79 @@
     <!-- header bar (unchanged) -->
     <children>
         <fx:include source="navigationBar.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        <SplitPane dividerPositions="0.36565096952908577" layoutX="7.0" layoutY="35.0" prefHeight="356.0" prefWidth="587.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
+        <SplitPane dividerPositions="0.36565096952908577" layoutX="7.0" layoutY="35.0" prefHeight="317.0" prefWidth="580.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="202.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#initializeChoiceBox" prefHeight="303.0" prefWidth="202.0">
                     <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Shipping">
                             <font>
-                                <Font name="Bookman Old Style" size="14.0" />
+                                <Font name="Bookman Old Style Bold Italic" size="14.0" />
                             </font>
                         </Label>
-                        <TextField layoutX="11.0" layoutY="36.0" promptText="Address">
+                        <TextField fx:id="addressTextField" layoutX="11.0" layoutY="36.0" prefHeight="25.0" prefWidth="178.0" promptText="Address">
                             <font>
                                 <Font name="Bookman Old Style" size="14.0" />
                             </font>
                         </TextField>
-                        <TextField layoutX="12.0" layoutY="71.0" promptText="City">
+                        <TextField fx:id="cityTextField" layoutX="11.0" layoutY="69.0" prefHeight="25.0" prefWidth="178.0" promptText="City">
                             <font>
                                 <Font name="Bookman Old Style" size="14.0" />
                             </font>
                         </TextField>
-                        <TextField layoutX="14.0" layoutY="243.0" promptText="State">
+                        <TextField fx:id="zipCodeTextField" layoutX="11.0" layoutY="135.0" onAction="#zipCodeLength" prefHeight="25.0" prefWidth="178.0" promptText="Zipcode">
                             <font>
                                 <Font name="Bookman Old Style" size="14.0" />
                             </font>
                         </TextField>
-                        <TextField layoutX="14.0" layoutY="139.0" promptText="Zipcode">
-                            <font>
-                                <Font name="Bookman Old Style" size="14.0" />
-                            </font>
+                        <ChoiceBox fx:id="stateChoiceBox" layoutX="11.0" layoutY="102.0" onMouseClicked="#initializeChoiceBox" prefHeight="25.0" prefWidth="178.0" />
+                  <AnchorPane layoutY="170.0" prefHeight="140.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="User Information">
+                           <font>
+                              <Font name="Bookman Old Style Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="11.0" layoutY="36.0" prefHeight="25.0" prefWidth="178.0" promptText="Email">
+                           <font>
+                              <Font name="Bookman Old Style" size="14.0" />
+                           </font>
                         </TextField>
-                        <ChoiceBox fx:id="stateChoiceBox" layoutX="11.0" layoutY="106.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="203.0" prefWidth="361.0">
                     <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Payment Information">
                             <font>
-                                <Font name="Bookman Old Style" size="14.0" />
+                                <Font name="Bookman Old Style Bold Italic" size="14.0" />
                             </font>
                         </Label>
+                        <TextField fx:id="cardNumTextField" layoutX="14.0" layoutY="36.0" onAction="#cardNumberLength" promptText="Card number">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="nameOnCardTextField" layoutX="14.0" layoutY="69.0" promptText="Name on card">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="billingZipTextField" layoutX="14.0" layoutY="102.0" promptText="Billing zipcode">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="cvvTextField" layoutX="14.0" layoutY="135.0" onAction="#cvvLength" promptText="CVV">
+                            <font>
+                                <Font name="Bookman Old Style" size="14.0" />
+                            </font>
+                        </TextField>
                     </children>
                 </AnchorPane>
             </items>
         </SplitPane>
-        <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Pay Now" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+        <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" text="Pay Now" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="360.0">
             <font>
                 <Font name="Bookman Old Style" size="14.0" />
             </font>

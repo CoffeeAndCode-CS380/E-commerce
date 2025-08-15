@@ -31,12 +31,6 @@ public class NavigationBarController{
     //to use in the openSizeSelectionPage method
     private Scene scene;
 
-    /*@FXML
-    private void switchToMain() throws IOException{
-        App.setRoot("mainPage");
-        System.out.println("TESTING");
-    }*/
-
     /**
      * Switches to cart page by clicking on the cart icon
      * @param event
@@ -53,16 +47,6 @@ public class NavigationBarController{
         stage.setTitle("Cart");
         stage.show();
     }
-
-    /*@FXML
-    protected void switchToSearchResults() throws IOException{
-        App.setRoot("searchResultsPage");
-    }*/
-
-    /*@FXML
-    protected void switchToLogin(ActionEvent event) throws IOException{
-        App.setRoot("loginPage");
-    }*/
 
     /**
      * executes search by hitting enter
