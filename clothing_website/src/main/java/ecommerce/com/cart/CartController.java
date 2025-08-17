@@ -97,13 +97,13 @@ public class CartController {
             // style of the cards
             root.setPadding(new Insets(10));
             root.setAlignment(Pos.TOP_CENTER);
-            root.setStyle("""
-            -fx-background-color: white;
-            -fx-background-radius: 10;
-            -fx-border-color: rgba(0,0,0,0.08);
-            -fx-border-radius: 10;
-            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
-        """);
+            root.setStyle(
+                            "-fx-background-color: white;"
+                          + "-fx-background-radius: 10;"
+                          + "-fx-border-color: rgba(0,0,0,0.08);"
+                          + "-fx-border-radius: 10;"
+                          + "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);"
+                        );
 
             root.getChildren().addAll(productImage, infoBox, removeButton);
 
