@@ -45,7 +45,7 @@
                               <Font name="Bookman Old Style Bold Italic" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="11.0" layoutY="36.0" prefHeight="25.0" prefWidth="178.0" promptText="Email">
+                        <TextField fx:id="emailTextField" layoutX="11.0" layoutY="36.0" onAction="#getEmail" prefHeight="25.0" prefWidth="178.0" promptText="Email">
                            <font>
                               <Font name="Bookman Old Style" size="14.0" />
                            </font>
