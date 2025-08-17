@@ -1,11 +1,19 @@
 package ecommerce.com;
+import java.util.Properties;
 import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 
 /** This class handles all log for the checkout page and its UI elements. */
 public class CheckoutController {
@@ -18,8 +26,12 @@ public class CheckoutController {
     @FXML private TextField nameOnCardTextField;
     @FXML private TextField billingZipTextField;
     @FXML private TextField cvvTextField;
-    @FXML private Button payNowButton;
+    @FXML private TextField emailTextField;
     private final Random rand = new Random();
+
+    private static final String EMAIL_FROM = "rdelgado5050@gmail.com"; //DO NOT CHANGE THIS
+	//private static final String EMAIL_TO = "rdelgado134@gmail.com";
+	private static final String APP_PASSWORD = "seps bcuv sdmp okmy"; //DO NOT CHANGE THIS
 
     /**This method gives the state choice box its 50 items/states for the user to pick from. */
     @FXML
@@ -186,6 +198,12 @@ public class CheckoutController {
             paymentStatusAlert.setTitle("Payment Successful");
             paymentStatusAlert.setHeaderText(null);
             paymentStatusAlert.setContentText("Your payment was successful! 🎉");
+            try {
+                sendEmail();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         } else {
             paymentStatusAlert = new Alert(Alert.AlertType.ERROR);
             paymentStatusAlert.setTitle("Payment Failed");
@@ -195,4 +213,40 @@ public class CheckoutController {
         paymentStatusAlert.showAndWait();
      }
     }
+//---------------------------------------------------------------------------------------------------------------
+    @FXML
+    public String getEmail(){
+        String result = emailTextField.getText();
+        System.out.println(result);
+        return result;
+    }
+
+    	
+    public void sendEmail() throws Exception {
+        //String EMAIL_TO = getEmail();
+		Message message = new MimeMessage(getEmailSession());
+		message.setFrom(new InternetAddress(EMAIL_FROM));
+		message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTextField.getText()));
+		message.setSubject("CoffeeAndCode :: Purchase Confirmation");
+		message.setText("Thank you for your ordering from CoffeeAndCode, go Matadors! \n\n --sent from Ecommerce project");
+		Transport.send(message);
+	}
+	
+	private static Session getEmailSession() {
+		return Session.getInstance(getGmailProperties(), new Authenticator() {
+		    protected PasswordAuthentication getPasswordAuthentication() {
+		        return new PasswordAuthentication(EMAIL_FROM, APP_PASSWORD);
+		    }
+		});
+	}
+	
+	private static Properties getGmailProperties() {
+		Properties prop = new Properties();
+		prop.put("mail.smtp.auth", "true");
+		prop.put("mail.smtp.starttls.enable", "true");
+		prop.put("mail.smtp.host", "smtp.gmail.com");
+		prop.put("mail.smtp.port", "587");
+		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+		return prop;
+	}    
 }
