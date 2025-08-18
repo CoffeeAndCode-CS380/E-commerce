@@ -1,7 +1,6 @@
 package ecommerce.com.cart;
 
 import ecommerce.com.product.Product;
-import javafx.collections.FXCollections;
 import javafx.collections.*;
 import java.util.*;
 
@@ -10,7 +9,7 @@ public class CartUtils {
 
     private static final CartUtils INSTANCE = new CartUtils();
     public static CartUtils get() { return INSTANCE; }
-    private final ObservableList<Product> items = FXCollections.observableArrayList(); // holds cart items
+    private static final ObservableList<Product> items = FXCollections.observableArrayList(); // holds cart items
 
     /**
      * Add a product to the cart
@@ -42,6 +41,10 @@ public class CartUtils {
     /** @return unmodifiable view of the cart’s items */
     public ObservableList<Product> getItems() {
         return items;
+    }
+
+    public static void clearCart(){
+        items.clear();
     }
 
 }
