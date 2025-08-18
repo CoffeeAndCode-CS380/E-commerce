@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.CheckoutController">
+<AnchorPane prefHeight="680.0" prefWidth="840.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ecommerce.com.CheckoutController">
 
     <!-- header bar (unchanged) -->
     <children>

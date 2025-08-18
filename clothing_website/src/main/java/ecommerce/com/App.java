@@ -24,7 +24,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
        //first window
         //just open the first window, the size selection window will be open later
-        scene = new Scene(loadFXML("mainPage"), 640, 480);
+        scene = new Scene(loadFXML("mainPage"), 840, 680);
         stage.setScene(scene);
         stage.show();
     }
