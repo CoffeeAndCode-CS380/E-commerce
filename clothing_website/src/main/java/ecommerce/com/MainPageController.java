@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 /**
  * Our main is the pilot of our program
  */
-public class MainPageController{
+public class MainPageController extends NavigationBarController{
 
     //to use in the openSizeSelectionPage method
     private Scene scene;
@@ -55,37 +55,37 @@ public class MainPageController{
     //TODO: remember to change the category and price accordingly this is just for test.
     @FXML
     private void clickOnBlackHoodie(ActionEvent event) throws IOException {
-        Product blackHoodie = new Product("Black Hoodie", 60.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/black_hoodie.jpg");
+        Product blackHoodie = new Product("Black Hoodie", 69,"M","Clothing", "TSH001", "ecommerce/com/site icons/black_hoodie.jpg");
         openSizeSelectionPage(event, blackHoodie);
     }
 
     @FXML
     private void clickOnGreyHoodie(ActionEvent event) throws IOException {
-        Product greyHoodie = new Product("Grey Hoodie", 60.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/grey_hoodie.jpg");
+        Product greyHoodie = new Product("Grey Hoodie", 49.99,"M","Clothing", "TSH001", "ecommerce/com/site icons/grey_hoodie.jpg");
         openSizeSelectionPage(event, greyHoodie);
     }
 
     @FXML
     private void clickOnWhiteHoodie(ActionEvent event) throws IOException {
-        Product whiteHoodie = new Product("White Hoodie", 60.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/white_hoodie.png");
+        Product whiteHoodie = new Product("White Hoodie", 60,"M","Clothing", "TSH001", "ecommerce/com/site icons/white_hoodie.png");
         openSizeSelectionPage(event, whiteHoodie);
     }
 
     @FXML
     private void clickOnBlackJeans(ActionEvent event) throws IOException {
-        Product blackJeans = new Product("Black Jeans", 45.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/black_jeans.jpg");
+        Product blackJeans = new Product("Black Jeans", 33,"M","Clothing", "TSH001", "ecommerce/com/site icons/black_jeans.jpg");
         openSizeSelectionPage(event, blackJeans);
     }
 
     @FXML
     private void clickOnBlueJeans(ActionEvent event) throws IOException {
-        Product blueJeans = new Product("Blue Jeans", 45.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/blue_jeans.jpg");
+        Product blueJeans = new Product("Blue Jeans", 33,"M","Clothing", "TSH001", "ecommerce/com/site icons/blue_jeans.jpg");
         openSizeSelectionPage(event, blueJeans);
     }
 
     @FXML
     private void clickOnLightBlueJeans(ActionEvent event) throws IOException {
-        Product lightBlueJeans = new Product("Light blue Jeans", 60.00,"M","Clothing", "TSH001", "ecommerce/com/site icons/light_blue_jeans.jpg");
+        Product lightBlueJeans = new Product("Light blue Jeans", 33,"M","Clothing", "TSH001", "ecommerce/com/site icons/light_blue_jeans.jpg");
         openSizeSelectionPage(event, lightBlueJeans);
     }
 

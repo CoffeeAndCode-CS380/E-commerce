@@ -1,6 +1,8 @@
 package ecommerce.com.product;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,5 +48,28 @@ public class ProductLoader {
             // do something
         }
     }*/
+
+    /**
+     * an overload for the readfile testing
+     *
+     */
+    public static List<Product> readFile(String fileName) throws IOException {
+        List<Product> products = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] t = line.split(",");
+                if (t.length != 6) continue; // or throw if you prefer
+                double price = Double.parseDouble(t[1].trim());
+                products.add(new Product(
+                        t[0].trim(), price, t[2].trim(), t[3].trim(), t[4].trim(), t[5].trim()
+                ));
+            }
+        }
+        return products;
+    }
+
+
+
 
 }

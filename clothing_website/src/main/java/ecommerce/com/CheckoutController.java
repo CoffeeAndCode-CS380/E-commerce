@@ -1,17 +1,12 @@
 package ecommerce.com;
 import java.util.Properties;
 import java.util.Random;
-
-import ecommerce.com.cart.CartUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
 import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
 import jakarta.mail.PasswordAuthentication;
@@ -19,7 +14,6 @@ import jakarta.mail.Session;
 import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
-import javafx.scene.Node;
 
 /** This class handles all log for the checkout page and its UI elements. */
 public class CheckoutController {
@@ -206,13 +200,6 @@ public class CheckoutController {
             paymentStatusAlert.setContentText("Your payment was successful! 🎉");
             try {
                 sendEmail();
-                CartUtils.clearCart();
-                  FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPage.fxml"));
-                  Parent mainPage = loader.load();
-                  Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                  stage.setScene(new Scene(mainPage));
-                  stage.show(); 
-
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

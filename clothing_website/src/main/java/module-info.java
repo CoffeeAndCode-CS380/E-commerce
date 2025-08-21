@@ -2,8 +2,10 @@ module ecommerce.com {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
-    requires org.eclipse.angus.mail;
-    requires org.eclipse.angus.activation;
+    requires jakarta.activation;
+    requires jakarta.mail;
+requires  junit;
+    requires org.junit.jupiter.api;
 
     opens ecommerce.com to javafx.fxml;
     exports ecommerce.com;
